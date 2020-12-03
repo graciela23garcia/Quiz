@@ -101,10 +101,10 @@ var questions = [
   ];
 
 var questionsEl = document.getElementById("questions");
-var timerEl = document.querySelector(".time");
+var timerEl = document.getElementById("time");
 var submitButton = document.getElementById("submit");
 var choicesEl = document.getElementById("choices");
-var startButton = document.querySelector(".startQ");
+var startButton = document.getElementById("startQ");
 var initialsEl = document.getElementById("initials");
 var reportEl = document.getElementById("report");
 
@@ -177,10 +177,10 @@ function endQuiz() {
 
 
 //HELP HERE  
-startButton.addEventListener("click", function(event){
-    console.log("YES");
+//startButton.addEventListener("click", function(event){
+    //console.log("YES");
 
-});
+//});
 
 //Sart Quiz. UN hide questions section. Start timer and show it
 function startQuiz() {
@@ -193,8 +193,8 @@ function startQuiz() {
 }
 
 //This is timer and if user runs out of time the timer will end
-function timerCLock () {
-    time--
+function timerCLock() {
+    time--;
     timerEl.textContent = time;
 
     if (time<=0){
@@ -208,7 +208,7 @@ function timerCLock() {
   time--;
   timerEl.textContent = time;
 
-  if (time <= 0) {
+  if(time <= 0) {
     endQuiz()
 
   }
@@ -233,7 +233,7 @@ function saveHighscore() {
     };
     highscores.push(newScore);
     window.localStorage.setItem("highscores", JSON.stringify(highscores));
-    window.location.href = "score.html";
+    window.location.href = "highscores.html";
   }
 }
 
