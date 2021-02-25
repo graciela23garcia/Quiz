@@ -111,7 +111,7 @@ var reportEl = document.getElementById("report");
 
 //State Variables 
 var currQuestionIndex = 0;
-var time = questions.legnth * 15
+var time = questions.length * 15
 var timerId;
 
 //Display Questions in a function, creating HTML. Looping over question and choices 
@@ -189,7 +189,7 @@ function startQuiz() {
     timerId = setInterval(timerCLock, 1000);
     timerEl.textContent = time;
     displayQuestion();
-
+    questionsEl.classList.remove("hide");
 }
 
 //This is timer and if user runs out of time the timer will end
@@ -199,19 +199,8 @@ function timerCLock() {
 
     if (time<=0){
         endQuiz();
-    }
 }
 
-function timerCLock() {
-  //update the time 
-  // check if the user ran out of time 
-  time--;
-  timerEl.textContent = time;
-
-  if(time <= 0) {
-    endQuiz()
-
-  }
 }
 
 //get value of input box
